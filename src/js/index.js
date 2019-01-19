@@ -72,7 +72,6 @@ const controlRecipe = async () => {
 
     // Get ID from URL
     const id = window.location.hash.replace('#', '');
-    console.log(id);
 
     if (id) {
         // Prepare UI for changes
@@ -149,7 +148,6 @@ const controlLike = () => {
     const currentID = state.recipe.id;
 
     // User has NOT yet liked current recipe
-    console.log(state.likes.isLiked(currentID));
     if( !state.likes.isLiked(currentID) ) {
         // Add like in the state
         const newLike = state.likes.addLike(
@@ -208,6 +206,15 @@ elements.recipe.addEventListener('click', e => {
     {
         controlLike();
     }
-    // console.log(state.recipe);
 });
+
+/**
+ * TODO:
+ *  1. Implement button to delete all shopping list items
+ *  2. Implement functionality to manually add items to shopping list.
+ *  3. Save shopping list data in local storage.
+ *  4. Improve the ingredient parsing algorithm.
+ *  5. Come up with an algorithm for calculating the amount of servings,.
+ *  6. Improve error handling
+ */
 
