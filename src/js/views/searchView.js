@@ -30,7 +30,7 @@ const limitRecipeTitle = (title, limit = 17) => {
 const renderRecipe = recipe => {
     const markup = `
         <li>
-            <a class="results__link" href="${recipe.recipe_id}">
+            <a class="results__link" href="#${recipe.recipe_id}">
                 <figure class="results__fig">
                     <img src="${recipe.image_url}" alt="Test">
                 </figure>
@@ -80,7 +80,7 @@ const renderButtons = (page, numResults, resPerPage) => {
     elements.searchResPages.insertAdjacentHTML('afterbegin', button);
 };
 
-export const renderResults = (recipes, page=2, resPerPage=10) => {
+export const renderResults = (recipes, page=1, resPerPage=10) => {
     const start = (page - 1) * resPerPage;
     const end = page * resPerPage;
 
